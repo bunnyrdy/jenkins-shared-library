@@ -84,6 +84,7 @@ def call(Map configMap){
                    build job: "../${component}-cd", parameters: [string(name: 'version', value: "${appVersion}")], wait: true
                 }
             }
+        }
 
             post {
                 always {
@@ -102,4 +103,3 @@ def call(Map configMap){
 
         }
     }
-}
