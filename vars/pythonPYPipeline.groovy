@@ -21,7 +21,7 @@ def call(Map configMap){
                          def fileversion = readFile('version.txt')
                                 .split('=')[1]
                                 .trim()
-                         appVersion = fileversion.version
+                         appVersion = fileversion
                         echo "Version is: $appVersion"
                     }
                 }
