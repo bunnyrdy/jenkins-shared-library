@@ -19,7 +19,7 @@ def call(Map configMap){
                 steps {
                     script {
                         def pom = readMavenPom file: 'pom.xml'
-                        appVersion = packageJson.version
+                        appVersion = pom.version
                         echo "Version is: $appVersion"
                     }
                 }
