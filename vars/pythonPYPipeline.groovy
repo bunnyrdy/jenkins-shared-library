@@ -18,9 +18,10 @@ def call(Map configMap){
             stage('Read Version'){
                 steps {
                     script {
-                         def appVersion = readFile('version.txt')
+                         def fileversion = readFile('version.txt')
                                 .split('=')[1]
                                 .trim()
+                         appVersion = fileversion.version
                         echo "Version is: $appVersion"
                     }
                 }
