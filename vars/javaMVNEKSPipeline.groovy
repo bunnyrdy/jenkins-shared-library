@@ -84,6 +84,7 @@ def call(Map configMap){
                    build job: "../${component}-cd", parameters: [string(name: 'version', value: "${appVersion}")], wait: true
                 }
             }
+        }
 
             post {
                 always {
@@ -91,15 +92,17 @@ def call(Map configMap){
                     deleteDir()
                 }
 
-            }
+            
             failure { 
                 echo 'I will run when pipeline is failed'
             }
             success { 
                 echo 'I will run when pipeline is success'
             }
-            
+            }
+
+        
+    
 
         }
     }
-}
